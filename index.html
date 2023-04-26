@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./css/reset.css">
+	<link rel="stylesheet" href="./scss/style.css">
+	<link rel="stylesheet" href="./scss/media.css">
+	<title>IQ TEST</title>
+</head>
+
+<body>
+	<header class="header">
+		<div class="header__container">
+			<div class="header__menu-burger">
+				<span></span>
+			</div>
+			<nav class="header__nav">
+				<div class="menu__close-cross">
+					<span></span>
+				</div>
+				<ul class="menu header__menu">
+					<li>
+						<a href="" class="menu__item">Главная</a>
+					</li>
+					<li>
+						<a href="" class="menu__item burger__info-link">Информация о тесте</a>
+					</li>
+					<li>
+						<button class="test-button burger__test-button">
+							<a href="" class="menu__item">Пройти тест</a>
+						</button>
+					</li>
+				</ul>
+			</nav>
+		</div>
+		<ul class="header__menu-hidden">
+			<li>
+				<a href="" class="menu__item">Главная</a>
+			</li>
+			<li>
+				<a href="" class="menu__item burger__info-link">Информация о тесте</a>
+			</li>
+			<li>
+				<button class="test-button burger__test-button">
+					<a href="" class="menu__item">Пройти тест</a>
+				</button>
+			</li>
+		</ul> 
+		<div class="header__hidden-container hidden">
+			<img src="./img/rain_bk3.png" alt="">
+			<h1 class="header__title">
+				тест на определение IQ
+			</h1>
+		</div>
+	</header>
+	<main class="main">
+		<div class="wrapper">
+			<div class="main__window">
+				<div>
+					Пройдите точный и быстрый
+				</div>
+				<h2>
+					Тест на определение<br>iq
+				</h2>
+				<!-- <p class="brain__img">
+					<img src="./img/rain_bk3.png" alt="#">
+				</p> -->
+				<button class="yellow__button test-button">
+					Пройти тест
+				</button>
+				<div class="two-colors">
+					<p>И получите рекомендации<br>по развитию своего интеллекта</p>
+					<p>и улучшению финансового<br>благосостояния и личной жизни</p>
+				</div>
+				<div class="button__more">
+					<label for="button-more">Подробнее</label>
+					<button id="button-more">
+						<img src="./img/Group 3.png" alt="#">
+					</button>
+				</div>
+			</div>
+
+			<div class="quiz hidden" id="gt">
+				<div class="quiz__progress">
+					<div class="quiz__progress-inner">
+
+					</div>
+				</div>
+				<div class="quiz__content">
+					<h4 class="quiz__title">
+
+					</h4>
+					<div class="test-img">
+
+					</div>
+					<ul class="answer__list" id="answer__list">
+
+					</ul>
+				</div>
+				<div class="quiz__next-btn">
+					<button class="disabled__button">
+						Далее
+					</button>
+				</div>
+				<div class="quiz__loader hidden">
+					<h5>
+						Обработка результатов
+					</h5>
+
+					<div class="dot-spinner">
+						<div class="dot-spinner__dot"></div>
+						<div class="dot-spinner__dot"></div>
+						<div class="dot-spinner__dot"></div>
+						<div class="dot-spinner__dot"></div>
+						<div class="dot-spinner__dot"></div>
+						<div class="dot-spinner__dot"></div>
+						<div class="dot-spinner__dot"></div>
+						<div class="dot-spinner__dot"></div>
+						<div class="dot-spinner__dot"></div>
+						<div class="dot-spinner__dot"></div>
+					</div>
+					<p>
+						Определение стиля мышления..........
+					</p>
+				</div>
+				<div class="quiz__result hidden">
+					<div class="result-content">
+						<div class="result-header">
+							<h6>
+								Ваш результат рассчитан:
+							</h6>
+							<p>
+								Вы относитесь к 3% респондентов, чей уровень интеллекта более чем на
+								15 пунктов отличается от среднего в большую или меньшую сторону!
+							</p>
+							<div>
+								Скорее получите свой результат!
+							</div>
+						</div>
+						<div class='result-confidentiality'>
+							<p>
+								В целях защиты персональных данных результат теста, их подробная интерпретация и
+								рекомендации доступны в виде голосового сообщения по звонку с вашего мобильного телефона
+							</p>
+						</div>
+						<div class="result-timer">
+							Звоните скорее, запись доступна всего<br><span class="timer">10:00</span>
+						</div>
+						<div class="result-call">
+							<button id="call-btn">
+								Позвонить и послушать результат
+							</button>
+						</div>
+						<div id="data-container" class="hidden">
+							 <div class="data__text">
+							
+							</div> 
+
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<section class="test__info-section" id="info-section">
+				<div class="about">
+					<img src="./img/Rectangle 2.6.png" alt="">
+					<h4>
+						Профессиональный<br>IQ-тест позволяет не только определить коэффициент вашего интеллекта,<br>но
+						и выработать список рекомендаций для повышения этого показателя.
+					</h4>
+				</div>
+				<div class="field__activity">
+					<div class="field__activity-text">
+						Также по результатам теста<br><span>вы получите</span> подробные <span>советы</span> по
+						определению наиболее перспективной <span>для вашего типа <span
+								class="lowercase-span">интеллекта</span>
+							сферы деятельности,</span><br>
+						которая принесет вам скорейший финансовый результат.
+					</div>
+					<p>
+						<img src="./img/brainimage.png" alt="#">
+					</p>
+					<button class="yellow__button test-button">
+						Пройти Тест
+					</button>
+				</div>
+				<div class="test__time">
+					<div class="upper-text">
+						Прохождение теста займет у<br> вас не более <span>12 минут</span>, а его <span
+							class="white-span">результаты</span> вы
+						сможете <span>использовать всю жизнь.</span>
+					</div>
+					<div class="gray__table">
+						<p>Профессиональная<br> интерпретация и детально <span>проработанные<br> рекомендации</span>
+							позволят
+							вам качественно<span> изменить все аспекты своей жизни:</span>
+							от финансового до любовного.</p>
+					</div>
+					<button class="opacity__button test-button">
+						Пройти Тест
+					</button>
+				</div>
+
+			</section>
+		</div>
+
+	</main>
+	<footer>
+		<div class="footer-content">
+			<img src="./img/c-marker.svg" alt="#">
+			<p>2019</p>
+		</div>
+		<div class="footer__result hidden">
+			TERMENI SI CONDITII: ACESTA ESTE UN SERVICIU DE DIVERTISMENT. PRIN FOLOSIREA LUI DECLARATI CA AVETI 18 ANI
+			IMPLINITI
+		</div>
+	</footer>
+	<script src="./js/main.js">
+
+	</script>
+</body>
+
+</html>

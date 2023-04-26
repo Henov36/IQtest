@@ -1,0 +1,13 @@
+@media (min-width: 1000px) {
+  h4::before {
+    right: 350px !important;
+  }
+  h4::after {
+    left: 350px !important;
+  }
+}
+@media (min-width: 425px) {
+  .about img {
+    display: none;
+  }
+}/*# sourceMappingURL=media.css.map */
