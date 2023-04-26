@@ -6,6 +6,74 @@
     left: 350px !important;
   }
 }
+@media (max-width: 800px) {
+  .main__window {
+    height: calc(100vh - 65px) !important;
+  }
+}
+@media (min-width: 767px) {
+  header {
+    justify-content: space-between;
+  }
+  .header__menu-hidden {
+    display: flex !important;
+  }
+  .header__hidden-container {
+    padding-right: 20px;
+  }
+  main .main__window div:first-child {
+    font-size: 25px;
+    font-weight: 400;
+    letter-spacing: 0.2rem;
+  }
+  main .main__window h2 {
+    font-size: 45px;
+    padding-top: 70px;
+  }
+  main .main__window .two-colors {
+    font-size: 25px;
+  }
+  main .main__window .button__more {
+    padding-top: 30px;
+  }
+  main .main__window .button__more label {
+    font-size: 16px;
+  }
+}
+@media (max-width: 767px) {
+  .header__menu-burger {
+    position: relative;
+    width: 30px;
+    display: block;
+    margin-left: 15px;
+  }
+  .header__menu-burger span {
+    height: 3px;
+    width: 24px;
+    position: absolute;
+    background: #9b9797;
+    top: 17px;
+  }
+  .header__menu-burger ::after {
+    content: "";
+    height: 3px;
+    width: 24px;
+    position: absolute;
+    background: #9b9797;
+    top: 7px;
+  }
+  .header__menu-burger ::before {
+    content: "";
+    height: 3px;
+    width: 24px;
+    position: absolute;
+    background: #9b9797;
+    top: 14px;
+  }
+  .header__container {
+    display: block;
+  }
+}
 @media (min-width: 425px) {
   .about img {
     display: none;

@@ -117,51 +117,6 @@ header {
   display: none;
 }
 
-@media (max-width: 767px) {
-  .header__menu-burger {
-    position: relative;
-    width: 30px;
-    display: block;
-    margin-left: 15px;
-  }
-  .header__menu-burger span {
-    height: 3px;
-    width: 24px;
-    position: absolute;
-    background: #9b9797;
-    top: 17px;
-  }
-  .header__menu-burger ::after {
-    content: "";
-    height: 3px;
-    width: 24px;
-    position: absolute;
-    background: #9b9797;
-    top: 7px;
-  }
-  .header__menu-burger ::before {
-    content: "";
-    height: 3px;
-    width: 24px;
-    position: absolute;
-    background: #9b9797;
-    top: 14px;
-  }
-  .header__container {
-    display: block;
-  }
-}
-@media (min-width: 767px) {
-  header {
-    justify-content: space-between;
-  }
-  .header__menu-hidden {
-    display: flex !important;
-  }
-  .header__hidden-container {
-    padding-right: 20px;
-  }
-}
 .header__nav {
   min-height: 100vh;
   width: 100vw;
@@ -240,8 +195,7 @@ header {
   display: none;
   align-items: center;
   justify-content: space-around;
-  width: 350px;
-  width: 50%;
+  width: 550px;
 }
 .header__menu-hidden a {
   text-decoration: none;
@@ -289,7 +243,7 @@ main {
   background-image: url(../img/rain_bkwithbrain.png);
   background-repeat: no-repeat;
   background-size: cover;
-  height: calc(100vh - 65px);
+  height: fit-content;
   padding: 0px 20px;
   text-align: center;
   min-width: 320px;

@@ -256,10 +256,7 @@ openTestButttons.forEach(item => item.addEventListener('click', (e) => {
 		headerHidden.classList.remove('flex');
 		headerHidden.classList.add('hidden');
 	}
-	// quiz.classList.contains('quiz__display')
-	// ? (headerHidden.classList.add('flex'), headerHidden.classList.remove('hidden'))
-	// : (headerHidden.classList.remove('flex'), headerHidden.classList.add('hidden'));
-
+	
 	infoSection.classList.contains('test__info-section-block')
 		? (infoSection.classList.remove('test__info-section-block'), infoSection.classList.add('test__info-section'))
 		: infoSection.classList.add('test__info-section');
@@ -284,7 +281,6 @@ function showQuetions(index) {
 
 	questionTitle.innerHTML = `${questions[index].question}`;
 	questionTitle.style.fontSize = '21px';
-	// questionTitle.style.padding = '0px';
 
 	list.innerHTML = '';
 	imageDiv.innerHTML = '';
@@ -358,14 +354,7 @@ function showQuetions(index) {
 			list.classList.add('answer__list-image');
 			imageDiv.style.paddingTop = '20px'
 
-			options.forEach(item => {
-
-
-				// if (item.classList.contains('before-1string')) {
-				// 	item.classList.remove('before-1string')
-				// }
-			})
-
+		
 			label.forEach(item => item.style.textAlign = 'left')
 
 		} else if (questions[index].image === 'test1.png') {
@@ -386,11 +375,6 @@ function showQuetions(index) {
 					item.style.textAlign = 'left';
 				});
 
-
-				// if (options[2].classList.contains('before-1string')) {
-				// 	options[2].classList.remove('before-1string')
-				// 	options[2].classList.add('before-2strings')
-				// }
 			}
 
 		} else if (questions[index].image === 'test2.png') {

@@ -4,19 +4,17 @@
 html {
 	overflow-x: hidden;
 	margin-right: calc(-1 * (100vw - 100%));
+
 }
 
 
 body {
 	color: #FFFFFF;
 	font-family: 'PT Serif', serif;
-	// overflow: hidden;
 }
 
 .body-overflow {
-	// position: relative;
 	overflow: hidden;
-
 }
 
 
@@ -138,66 +136,7 @@ header {
 }
 
 
-@media(max-width:767px) {
 
-
-	.header__menu-burger {
-		position: relative;
-		width: 30px;
-
-		display: block;
-		margin-left: 15px;
-
-		span {
-			height: 3px;
-			width: 24px;
-			position: absolute;
-			background: #9b9797;
-			// margin: 0 auto;
-			top: 17px;
-		}
-
-		::after {
-			content: '';
-			height: 3px;
-			width: 24px;
-			position: absolute;
-			background: #9b9797;
-			// margin: 0 auto;
-			top: 7px;
-		}
-
-		::before {
-			content: '';
-			height: 3px;
-			width: 24px;
-			position: absolute;
-			background: #9b9797;
-			// margin: 0 auto;
-			top: 14px;
-		}
-	}
-
-	.header__container {
-		display: block;
-	}
-
-
-}
-
-@media(min-width:767px) {
-	header {
-		justify-content: space-between;
-	}
-
-	.header__menu-hidden {
-		display: flex !important;
-	}
-
-	.header__hidden-container {
-		padding-right: 20px;
-	}
-}
 
 
 .header__nav {
@@ -290,8 +229,8 @@ header {
 	display: none;
 	align-items: center;
 	justify-content: space-around;
-	width: 350px;
-	width: 50%;
+	width: 550px;
+	// width: 50%;
 
 	a {
 		text-decoration: none;
@@ -353,7 +292,8 @@ main {
 	background-image: url(../img/rain_bkwithbrain.png);
 	background-repeat: no-repeat;
 	background-size: cover;
-	height: calc(100vh - 65px);
+	// height: calc(100vh - 65px);
+	height: fit-content;
 	// height: 480px;
 	// max-height: 500px;
 	padding: 0px 20px;
