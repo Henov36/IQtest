@@ -657,7 +657,7 @@ main {
 
 .result-content {
   padding: 0px 15px;
-  height: calc(100vh - 95px);
+  height: calc(100vh - 65px);
   overflow-x: scroll;
 }
 
@@ -953,6 +953,7 @@ footer {
   min-width: 320px;
   height: 25px;
   background-color: #181818;
+  overflow: auto;
 }
 footer div {
   display: flex;
@@ -978,4 +979,5 @@ footer .footer__result {
   letter-spacing: 3px;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.5);
+  height: 40px;
 }/*# sourceMappingURL=style.css.map */
