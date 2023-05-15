@@ -240,9 +240,10 @@ main {
 }
 
 .main__window {
-  background-image: url(../img/rain_bkwithbrain.png);
-  background-repeat: no-repeat;
+  background-image: url(../img/2401680.jpg);
   background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   height: fit-content;
   padding: 0px 20px;
   text-align: center;
@@ -353,6 +354,9 @@ main {
   display: flex;
   align-items: center;
   margin-bottom: 10px;
+}
+.answer__list li :hover {
+  cursor: pointer;
 }
 .answer__list li input {
   position: absolute;
@@ -658,38 +662,59 @@ main {
 .result-content {
   padding: 0px 15px;
   height: calc(100vh - 65px);
-  overflow-x: scroll;
 }
 
 .result-header {
   margin-top: 35px;
   margin-bottom: 15px;
 }
-.result-header h6 {
-  font-family: "PT Serif";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 17px;
-  line-height: 21px;
-  text-align: center;
-  letter-spacing: 0.1em;
-}
-.result-header p {
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 18px;
-  text-align: center;
-  margin-top: 10px;
-}
 .result-header div {
   font-weight: 700;
-  font-size: 18px;
+  font-size: 14px;
   line-height: 22px;
   text-align: center;
   letter-spacing: 0.1em;
   color: #3BDE7C;
   text-transform: uppercase;
   margin-top: 25px;
+}
+
+.result-main {
+  font-size: 30px;
+}
+
+.result-info {
+  margin-top: 50px;
+  font-size: 18px;
+}
+
+.result-links {
+  margin-top: 50px;
+  font-size: 18px;
+}
+
+.result-list {
+  margin-bottom: 30px;
+}
+
+.result-link {
+  margin-top: 20px;
+}
+.result-link a {
+  height: 100%;
+  text-decoration: none;
+  color: #04fcfc;
+  text-transform: capitalize;
+  font-size: 25px;
+  transition: 0.3s ease;
+  display: inline-block;
+}
+.result-link a:hover {
+  transform: scale(1.2);
+  transition: 0.3s ease;
+  background: linear-gradient(to right, #08CF16 0%, #e4ab02 79%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .result-confidentiality {

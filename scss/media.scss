@@ -15,7 +15,6 @@
 
 @media(max-width:800px) {
 	.main__window {
-		height: calc(100vh - 65px) !important;
 	}
 }
 
@@ -60,6 +59,16 @@
 
 			}
 		}
+
+		.result-header{
+			font-size: 18px;
+		}
+				.result-info{
+					font-size: 30px;
+				}
+				.result-links{
+					font-size: 30px;
+				}
 	}
 
 

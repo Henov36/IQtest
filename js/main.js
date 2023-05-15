@@ -1,8 +1,6 @@
 
 "use strict"
 
-let foo = 0;
-
 //=== Open burger
 const burgerButtonOpenMenu = document.querySelector('.header__menu-burger').addEventListener('click', () => {
 	headerNav.classList.toggle('header__nav-block');
@@ -89,6 +87,7 @@ const questions = [
 	},
 	{
 		question: "Выберете лишнее:",
+		trueanswer: 'Скамейка',
 		options: [
 			"Дом",
 			"Шалаш",
@@ -99,6 +98,7 @@ const questions = [
 	},
 	{
 		question: "Продолжите числовой ряд: 18 20 24 32",
+		trueanswer: '48',
 		options: [
 			"62",
 			"48",
@@ -139,6 +139,7 @@ const questions = [
 	},
 	{
 		question: "Какой из городов лишний?",
+		trueanswer: 'Нью-Йорк',
 		options: [
 			"Вашингтон",
 			"Лондон",
@@ -150,6 +151,7 @@ const questions = [
 	},
 	{
 		question: "Выберите правильную фигуру из четырёх пронумерованных.",
+		trueanswer: '1',
 		options: [
 			"1",
 			"2",
@@ -170,6 +172,7 @@ const questions = [
 	},
 	{
 		question: "Какое определение, по-Вашему, больше подходит к этому геометрическому изображению: ",
+		trueanswer: 'оно остроконечное',
 		options: [
 			"оно остроконечное",
 			"оно устойчиво",
@@ -180,6 +183,7 @@ const questions = [
 	},
 	{
 		question: "Вставьте подходящее число",
+		trueanswer: '44',
 		options: [
 			"34",
 			"36",
@@ -256,15 +260,17 @@ openTestButttons.forEach(item => item.addEventListener('click', (e) => {
 		headerHidden.classList.remove('flex');
 		headerHidden.classList.add('hidden');
 	}
-	
+
 	infoSection.classList.contains('test__info-section-block')
-		? (infoSection.classList.remove('test__info-section-block'), infoSection.classList.add('test__info-section'))
+		? (infoSection.classList.remove('test__info-section-block'),
+			infoSection.classList.add('test__info-section'))
 		: infoSection.classList.add('test__info-section');
 
 
 	mainWindow.classList.add('none-display');
 	document.querySelector('.footer-content').classList.add('hidden')
 }))
+
 
 
 
@@ -354,7 +360,7 @@ function showQuetions(index) {
 			list.classList.add('answer__list-image');
 			imageDiv.style.paddingTop = '20px'
 
-		
+
 			label.forEach(item => item.style.textAlign = 'left')
 
 		} else if (questions[index].image === 'test1.png') {
@@ -433,34 +439,42 @@ function showQuetions(index) {
 
 //=============== Answer selected function =============== //
 
+
+
 function optionSelected(answer) {
 	const inputs = document.querySelectorAll('input[type="radio"]');
 	const options = document.querySelectorAll('.answer');
-	const list = document.getElementById('answer__list')
-	inputs.forEach(answer => {
-		if (answer.checked) {
+	const list = document.getElementById('answer__list');
 
+	inputs.forEach(answerUser => {
+
+		if (answerUser.checked) {
 			if (list.classList.contains('answer__list-image')) {
-				answer.parentElement.classList.add('selectImg')
+				answerUser.parentElement.classList.add('selectImg')
 			} else {
-				answer.parentElement.classList.add('select');
+				answerUser.parentElement.classList.add('select');
 			}
 
-			options.forEach(item => item.classList.add('.check'));
+			options.forEach(item => {
+				item.classList.add('.check')
+			});
 
 			btnNext.classList.add('active__button');
 		} else {
-			answer.parentElement.classList.remove('select');
-			answer.parentElement.classList.remove('selectImg')
-
+			answerUser.parentElement.classList.remove('select');
+			answerUser.parentElement.classList.remove('selectImg')
 		}
+		// console.log(document.querySelector('.select'));
+
 	})
+
 
 }
 
-
+// let userScore = 0;
 //=============== Button NEXT ===============////
-
+let trueAnswers = [];
+let iqLevel = 50;
 
 btnNext.addEventListener('click', nextQuetion)
 
@@ -474,9 +488,22 @@ function nextQuetion() {
 	const timer = document.querySelector('.timer')
 	const headerTitle = document.querySelector('.header__title')
 	const footerResults = document.querySelector('.footer__result')
-	const callBtn = document.getElementById('call-btn')
-	const dataTextContainer = document.querySelector('.data__text');
+	const resultMain = document.querySelector('.result-main')
 
+	if (questions[count].trueanswer) {
+		trueAnswers.push(questions[count].trueanswer)
+		const answers = document.querySelectorAll('.answer')
+		answers.forEach(item => {
+
+			if (item.classList.contains('select') || item.classList.contains('selectImg')) {
+				if (item.lastElementChild.textContent == questions[count].trueanswer) {
+					// userScore++;
+					iqLevel += 13;
+				}
+			}
+
+		})
+	}
 
 	if ((count + 1) == questions.length && option.classList.contains('.check')) {
 		quizLoader.classList.remove('hidden')
@@ -484,7 +511,8 @@ function nextQuetion() {
 		quizContent.classList.add('hidden')
 		quizBtnNext.classList.add('hidden')
 
-
+		const totalScore = `${iqLevel} балов`
+		resultMain.insertAdjacentHTML('beforeend', totalScore)
 		function results() {
 			quizLoader.classList.add('hidden');
 			quizProgress.classList.add('hidden')
@@ -492,67 +520,12 @@ function nextQuetion() {
 			headerTitle.textContent = 'ГОТОВО!'
 			headerTitle.classList.add('header__ready')
 			footerResults.classList.remove('hidden')
-
-
-			const startTimer = function () {
-				let time = 600;
-
-				setInterval(function () {
-
-					time--;
-					let minutes = String(Math.trunc(time / 60)).padStart(2, 0);
-					let seconds = String(time % 60).padStart(2, 0);
-					timer.textContent = `${minutes}:${seconds}`;
-
-					if (time === 0) {
-						clearInterval(startTimer);
-						location.reload()
-					}
-
-				}, 1000)
-			}
-			startTimer();
 			quiz.style.height = 'fit-content'
-
-			callBtn.addEventListener('click', () => {
-
-
-
-				fetch('https://swapi.dev/api/people/1/')
-					.then(response => response.json())
-					.then(data => {
-						console.log(data);
-
-						for (let [key, value] of Object.entries(data)) {
-							const dataText = `<div class="key__value-container">
-													<div class="key">
-														<p>
-														${key}
-														</p>
-														<span>-</span>
-													</div>
-													<div class="value">
-														<p>
-														${value}
-														</p>
-													</div>
-												</div>
-							`;
-							dataTextContainer.insertAdjacentHTML('beforeend', dataText)
-
-						}
-						const dataContainer = document.getElementById('data-container')
-						console.log(dataContainer);
-						dataContainer.classList.toggle('hidden')
-
-					})
-					.catch(error => console.error(error));
-			});
 		}
 		setTimeout(results, 3000);
-
 		return
 	}
+
 
 
 
@@ -562,8 +535,5 @@ function nextQuetion() {
 		btnNext.classList.remove('active__button')
 	} else {
 		console.log('Выберете вариант ответа');
-
 	}
 }
-
-

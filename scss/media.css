@@ -6,11 +6,6 @@
     left: 350px !important;
   }
 }
-@media (max-width: 800px) {
-  .main__window {
-    height: calc(100vh - 65px) !important;
-  }
-}
 @media (min-width: 767px) {
   header {
     justify-content: space-between;
@@ -38,6 +33,15 @@
   }
   main .main__window .button__more label {
     font-size: 16px;
+  }
+  main .result-header {
+    font-size: 18px;
+  }
+  main .result-info {
+    font-size: 30px;
+  }
+  main .result-links {
+    font-size: 30px;
   }
 }
 @media (max-width: 767px) {
